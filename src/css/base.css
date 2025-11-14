@@ -1,0 +1,48 @@
+:root {
+  --bg-dark: hsl(208 27% 1%);
+  --bg: hsl(206 17% 4%);
+  --bg-light: hsl(206 9% 9%);
+  --text: hsl(206 46% 95%);
+  --text-muted: hsl(206 7% 69%);
+  --highlight: hsl(206 5% 39%);
+  --border: hsl(206 7% 28%);
+  --border-muted: hsl(206 10% 18%);
+  --primary: hsl(204 74% 69%);
+  --secondary: hsl(27 65% 66%);
+  --danger: hsl(9 26% 64%);
+  --warning: hsl(52 19% 57%);
+  --success: hsl(146 17% 59%);
+  --info: hsl(217 28% 65%);
+}
+body.light {
+  --bg-dark: hsl(206 11% 90%);
+  --bg: hsl(206 23% 95%);
+  --bg-light: hsl(206 100% 100%);
+  --text: hsl(206 33% 4%);
+  --text-muted: hsl(206 7% 28%);
+  --highlight: hsl(206 100% 100%);
+  --border: hsl(206 4% 50%);
+  --border-muted: hsl(206 6% 62%);
+  --primary: hsl(199 100% 20%);
+  --secondary: hsl(33 100% 20%);
+  --danger: hsl(9 21% 41%);
+  --warning: hsl(52 23% 34%);
+  --success: hsl(147 19% 36%);
+  --info: hsl(217 22% 41%);
+}
+
+body {
+ background-color: var(--bg-dark); 
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  text-decoration: underline;
+}

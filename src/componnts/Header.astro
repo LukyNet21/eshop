@@ -1,0 +1,158 @@
+---
+
+---
+
+<header>
+  <div>Logo.exe</div>
+  <form action="/search" method="get">
+    <input placeholder="Search..." name="q" type="text"/>
+    <button type="submit">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"
+        ></circle></svg
+      >
+    </button>
+  </form>
+  <nav>
+    <div class="account-info">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"
+        ></circle><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"
+        ></path></svg
+      >
+      <div>
+        <span>Full Name</span>
+        <span>Business User</span>
+      </div>
+    </div>
+    <span class="gap"></span>
+    <a href="/saved">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"></path><path
+          d="m9 10 2 2 4-4"></path></svg
+      >
+    </a>
+    <span class="gap"></span>
+    <a href="/cart">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"
+        ></circle><path
+          d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+        ></path></svg
+      >
+    </a>
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--bg-light);
+    padding: 2rem 1rem;
+    font-size: 2rem;
+  }
+
+  form {
+    border: solid var(--border) 1px;
+    border-radius: 999px;
+  }
+
+  form input {
+    font-size: 24px;
+    padding: 0.75rem;
+    border: none;
+    background: transparent;
+    outline: none;
+  }
+
+  form button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin: 0 1.5rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: solid var(--border) 1px;
+    border-radius: 999px;
+    background-color: var(--bg-dark);
+  }
+
+  nav > span {
+    border-left: solid var(--border-muted) 1px;
+  }
+
+  .account-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .account-info div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .account-info span:first-child {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .account-info span:last-child {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  a svg {
+    color: var(--text);
+    transition: all 0.2s ease-in-out;
+  }
+
+  a svg:hover {
+    color: var(--text-muted);
+    transform: scale(1.15);
+  }
+</style>

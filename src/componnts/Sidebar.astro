@@ -9,8 +9,9 @@ const globalCategories = await db
 ---
 
 <aside>
-  <button
+  <button id="sidebar-toggle"
     >Zobrazit kategorie <svg
+      id="sidebar-toggle-svg"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -24,7 +25,7 @@ const globalCategories = await db
       <path d="m9 18 6-6-6-6"></path>
     </svg></button
   >
-  <div class="categories">
+  <nav class="categories" id="sidebar-content">
     {
       globalCategories.map((cat) => (
         <a href={"/categories/" + cat.slug}>
@@ -45,19 +46,33 @@ const globalCategories = await db
         </a>
       ))
     }
-  </div>
+  </nav>
 </aside>
+
+<script>
+  let state = false;
+  const button = document.getElementById("sidebar-toggle");
+  const content = document.getElementById("sidebar-content");
+  const downArrow = document.getElementById("sidebar-toggle-svg");
+  console.log(downArrow?.innerHTML);
+  function toggleSidebar() {
+    state = !state;
+    content?.classList.toggle("hidden", state);
+    downArrow?.classList.toggle("down-arrow", !state);
+  }
+  button?.addEventListener("click", toggleSidebar);
+</script>
 
 <style>
   aside {
     padding: 1rem 0;
     background-color: var(--bg);
-    width: fit-content;
+    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  aside > button {
+  button {
     border: none;
     background: transparent;
     font-size: 28px;
@@ -65,11 +80,12 @@ const globalCategories = await db
     display: flex;
     align-items: center;
     gap: 6px;
-  }
-
-  aside > button {
     cursor: pointer;
   }
+  nav {
+    width: 100%;
+  }
+
   .categories {
     font-size: 20px;
     display: flex;
@@ -77,10 +93,10 @@ const globalCategories = await db
   }
   .categories a {
     color: var(--text);
-    padding: 1rem 6rem;
+    padding: 1rem 0;
+    width: 100%;
     cursor: pointer;
-    display: flex;
-    align-items: center;
+    text-align: center;
     gap: 4px;
   }
   .categories a:hover {
@@ -93,5 +109,12 @@ const globalCategories = await db
   }
   .categories a:hover svg {
     transform: translateX(10px);
+  }
+  .hidden {
+    display: none;
+  }
+
+  .down-arrow {
+    transform: rotate(90deg);
   }
 </style>
